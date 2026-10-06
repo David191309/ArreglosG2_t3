@@ -1,7 +1,5 @@
 ﻿using Arreglos.Logica;
 
-[8:16 a.m., 6 / 10 / 2026] Dulce 🌸: using Arreglos.Logica;
-
 internal class Program
 {
     private static void Main(string[] args)
@@ -39,7 +37,7 @@ internal class Program
         //.WriteLine("\nArreglo ordenado ascendente");
         // oMiArreglo.Ordenar();
         //Console.Wr…
-        [8:17 a.m., 6 / 10 / 2026] Dulce 🌸: namespace Arreglos.Logica
+        namespace Arreglos.Logica
 {
     public class MiArreglo
     {
@@ -137,7 +135,49 @@ internal class Program
 
         }
 
+        //Método insertar
 
+        public void Insertar(int numero, int posicion)
+        {
+            if (EstaLleno)
+            {
+                throw new Exception("El arreglo esta lleno");
+            }
+            if (posicion < 0 || posicion >= _tope)
+            {
+                throw new Exception("Posicion invalida");
+            }
+            for (int i = _tope; i > posicion; i--)
+            {
+                _arreglo[i] = _arreglo[i - 1];
+            }
+            _arreglo[posicion] = numero;
+            _tope++;
+        }
+
+        //Método Insertar
+         public void Insertar(int numero, int posicion)
+        {
+            if(EstaLleno)
+            {
+                throw new Exception("El arreglo esta lleno");
+            }
+            if(posicion < 0)
+            {
+                posicion = 0;
+            }
+            if (posicion > _tope)
+            {
+                posicion = _tope;
+            }
+            for (int i= _tope; i > posicion; i--)
+            {
+                _arreglo[posicion] = numero;
+            }
+            _arreglo[posicion] = numero;
+            _tope++;
+
+        }
 
         public override string ToString()
         {
