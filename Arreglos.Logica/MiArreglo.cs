@@ -178,6 +178,78 @@ internal class Program
             _tope++;
 
         }
+        //Método eliminar
+        public void Eliminar(int posicion)
+        {
+            if(EstaVacioVacio)
+            {
+                throw new Exception("El arreglo esta vacio");
+            }
+            if(posicion < 0)
+            {
+                posicion = 0;
+            }
+            if (posicion > _tope)
+            {
+                posicion = _tope;
+            }
+            for(int i = posicion; 1<= _tope - 1; i++)
+            {
+                _arreglo[i] = _arreglo[i + 1];
+            }
+            _tope--;
+        }
+
+        //Metodo obtener pares
+
+        public MiArreglo ObtenerPares()
+        {
+            int contandoPares = 0;
+            for (int i = 0; i < _tope; i++)
+            {
+                if (_arreglo[i] % 2 == 0)
+                {
+                    contandoPares++;
+                }
+            }
+            var arregloPares = new MiArreglo(contandoPares);
+
+            MiArreglo oMiArreglo = new MiArreglo(contandoPares);
+
+                for(int j = 0; j < _tope; j++)
+                {
+                    if (_arreglo[j] % 2 == 0)
+                    {
+                        oMiArreglo.Agregar(_arreglo[j]);
+                    }
+                }
+            
+            return arregloPares;
+        }
+
+        //Método obtener primos
+        public MiArreglo ObtenerPrimos()
+        {
+            int contandoPrimos = 0;
+            for(int i = 0; i < _tope; i++)
+            {
+                if (EsPrimo(_arreglo[i]))
+                {
+                    contandoPrimos++;
+                }
+            }
+            var arregloPrimos = new MiArreglo(contandoPrimos);
+            for(int i = 0; i < _tope; i++)
+            {
+                if (_arreglo[i] % 2 == 0)
+                {
+                    arregloPrimos.Agregar(_arreglo[i]);
+                }
+            }
+            return arregloPrimos;
+        }
+
+
 
         public override string ToString()
         {
