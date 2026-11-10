@@ -21,12 +21,18 @@ internal class Program
             Console.WriteLine("\n Pares desordenados \n");
 
             var verPares = oMiArreglo.ObtenerPares();
-            Console.WriteLine(verPares);
-
             Console.ReadKey();
             Console.WriteLine("\n Pares ordenados \n");
             verPares.Ordenar();
             Console.WriteLine(verPares);
+
+            var verPrimos = oMiArreglo.ObtenerPrimos();
+            Console.ReadKey();
+            Console.WriteLine("\n Pares ordenados \n");
+            verPares.Ordenar();
+            Console.WriteLine(verPares);
+
+
 
             //oMiArreglo.Agregar(10);
             //oMiArreglo.Agregar(5);
